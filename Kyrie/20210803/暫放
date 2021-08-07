@@ -1,0 +1,63 @@
+<div class="product swiper-container myProduct">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <a href="https://24h.pchome.com.tw/prod/DBDM00-A900BJFF4" target="_blank" class="product1 ">
+                <div class="product_img">
+                  <img src="./img/pdimg1-1/a01.jpg" alt="蔬菜">
+                </div>
+                <p class="product_name">PChome生鮮 高麗菜-初秋 1顆800g</p>
+                <p class="product_price">
+                  <span>$</span>
+                  119
+                </p>
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="https://24h.pchome.com.tw/prod/DBDM00-A900BJFF4" target="_blank" class="product1 ">
+                <div class="product_img">
+                  <img src="./img/pdimg1-1/a01.jpg" alt="蔬菜">
+                </div>
+                <p class="product_name">PChome生鮮 高麗菜-初秋 1顆800g</p>
+                <p class="product_price">
+                  <span>$</span>
+                  119
+                </p>
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="https://24h.pchome.com.tw/prod/DBDM00-A900BJFF4" target="_blank" class="product1 ">
+                <div class="product_img">
+                  <img src="./img/pdimg1-1/a01.jpg" alt="蔬菜">
+                </div>
+                <p class="product_name">PChome生鮮 高麗菜-初秋 1顆800g</p>
+                <p class="product_price">
+                  <span>$</span>
+                  119
+                </p>
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="https://24h.pchome.com.tw/prod/DBDM00-A900BJFF4" target="_blank" class="product1 ">
+                <div class="product_img">
+                  <img src="./img/pdimg1-1/a01.jpg" alt="蔬菜">
+                </div>
+                <p class="product_name">PChome生鮮 高麗菜-初秋 1顆800g</p>
+                <p class="product_price">
+                  <span>$</span>
+                  119
+                </p>
+              </a>
+            </div>
+
+
+
+
+          </div>
+          <div class="swiper-btn-next">
+            <img src="./img/right.png" alt="">
+          </div>
+          <div class="swiper-btn-prev">
+            <img src="./img/left.png" alt="">
+          </div>
+
+        </div>

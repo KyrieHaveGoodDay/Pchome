@@ -1,0 +1,492 @@
+//bs4
+// @import 'bs4/functions';
+// @import 'bs4/variables';
+// @import 'bs4/mixins';
+
+//self - components
+@import 'init';
+
+html,
+body {
+  width: 100%;  
+  height: 100%;
+  position: relative;
+  padding-right: 0 !important;//modal 開啟抖動bug
+  -webkit-overflow-scrolling: touch; // ios滑動效果
+}
+.modal-open {
+  overflow: initial !important; //modal 開啟抖動bug
+}
+a:active,
+a:focus,
+button:active,
+button:focus,
+area:active,
+area:focus {
+  box-shadow: none;
+  outline: 0;
+}
+img {
+  max-width: 100%;
+}
+html {
+  @include media($pad) {
+    font-size: 14px;
+  }
+}
+.pc {
+  @include media($pad) {
+    display: none;
+  }
+}
+.mb {
+  display: none;
+  @include media($pad) {
+    display: block;
+  }
+}
+.main {
+  background-image: url('../img/bg.png');
+  background-repeat: repeat;
+  padding-bottom: 50px;
+}
+.reel {
+  max-width: 1050px;
+  margin: 0 auto;
+  padding: 0 40px;
+  position: relative;
+  @include media($pad) {
+    padding: 0 20px;
+    margin-top: 20px;
+  }
+  @include media($mobile) {
+    padding: 0 10px;
+    margin-top: 15px;
+  }
+}
+.reeltop {
+  position: absolute;
+  top: -15px;
+  left: 0;
+  @include media($mobile) {
+    top: -5px;
+  }
+}
+.reelbot {
+  position: absolute;
+  bottom: -15px;
+  left: 0;
+  @include media($mobile) {
+    bottom: -5px;
+  }
+}
+.reel_bg {
+  background-color: #e2b957;
+  padding: 45px 30px;
+  @include media($pad) {
+    padding: 40px 25px;
+  }
+  @include media($pad) {
+    padding: 15px 10px;
+  }
+}
+.reel_content {
+  background-image: url('../img/game_bg.png');
+  box-shadow: 5px 5px 5px rgba(#000,.4);
+  &-title {
+    padding: 15px;
+    text-align: center;
+  }
+}
+.game {
+  position: relative;
+}
+.game_light {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  &.light {
+    animation : light 0.5s infinite  normal;
+    // animation-timing-function:step-start;
+  }
+}
+@keyframes light {
+  0% {
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+.game_content {
+  padding: 8% 9% 10%;
+  position: absolute;
+  top: 0;
+  .row {
+    margin: 0;
+  }
+  [class^="col"] {
+    padding: 3px 5px 5px;
+    position: relative;
+    img {
+      box-shadow: 3px 3px 2px rgba(#000,.3);
+    }
+  }
+}
+.btn-start {
+  display: block;
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
+.img-content {
+  position: relative;
+  .img-dark {
+    position: absolute;
+    left: 0;
+    top: 0;
+    .now & {
+      display: none;
+    }
+  }
+}
+.remind {
+  padding: 10px 10px 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include media($pad) {
+    padding-bottom: 15px;
+  }
+  &:before, &:after {
+    content: '';
+    display: block;
+    margin: 0 20px;
+    width: 20%;
+    height: 5px;
+    background-color: #642f24;
+    @include media($mobile) {
+      margin: 0 10px;
+      height: 3px;
+    }
+  }
+  &_btn {
+    width: 30%;
+    text-align: center;
+    @include media($mobile) {
+      width: 40%;
+    }
+  }
+}
+section {
+  max-width: 1000px;
+  margin: 60px auto 0;
+  text-align: center;
+  .container-fluid {
+    margin-top: 15px;
+    padding: 0 20px;
+    @include media($mobile) {
+      margin-top: 6px;
+    }
+  }
+  [class^="col"] {
+    padding: 0 5px;
+    margin-bottom: 10px;
+  }
+  @include media($mobile) {
+    margin-top: 35px;
+  }
+}
+.section_title {
+  padding: 0 10px;
+  margin-bottom: 0;
+}
+//商品區塊
+.pd_card {
+  display: block;
+  position: relative;
+  background-color: #fff;
+  padding: 0 5px 45px;
+  transition: .3s;
+  text-align: center;
+  color: inherit;
+  height: 100%;
+  @include media($mobile) {
+    padding-bottom: 35px;
+  }
+  &:hover {
+    text-decoration: none;
+    color: inherit;
+    box-shadow: 3px 3px 6px rgba(#000,.2);
+    transform: translateY(-3px);
+  }
+  &-title {
+    background-color: #d7131d;
+    margin-bottom: 0;
+    padding: 5px;
+    font-size: 1rem;
+    font-weight: normal;
+    color: #fff;
+    @include media($mobile) {
+      font-size: 1rem;
+    }
+  }
+  &-name {
+    margin: 10px 0 6px;
+    font-size: 1rem;
+    @include media($mobile) {
+      margin: 5px;
+      font-size: 1rem;
+    }
+  }
+}
+.pd_price {
+  position: absolute;
+  bottom: 8px;
+  left: 5px;
+  right: 5px;
+  @include media($mobile) {
+    bottom: 0;
+  }
+  &-pre,&-now {
+    display: inline-block;
+    margin-bottom: 0;
+  }
+  &-pre {
+    text-decoration: line-through;
+    color: #666;
+    padding-right: 5px;
+  }
+  &-now {
+    font-size: 1.5rem; 
+    color: #ce0011;
+    font-weight: 700;
+    letter-spacing: -1px;
+    margin-right: 3px;
+    span {
+      font-size: 0.7em;
+      font-weight: 500;
+    }
+  }
+}
+//燈箱
+
+// 簽帳單
+#modal1 .modal-dialog {
+  max-width: 600px;
+  button.close {
+    background-color: #fff;
+    opacity: 1;
+    border-radius: 50%;
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    width: 40px;
+    height: 40px;
+    z-index: 10;
+    box-shadow: 3px 3px 2px rgba(#000,.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    span {
+      font-size: 36px;
+      color: #666;
+    }
+    @include media($mobile) {
+      width: 30px;
+      height: 30px;
+      span {
+        font-size: 24px;
+        // line-height:30px;
+      }
+    }
+  }
+}
+
+// 活動說明
+#modal2 {
+  .modal-header,.modal-body, .modal-footer {
+    border: 0;
+  }
+  .modal-dialog {
+    max-width: 800px;
+  }
+  .modal-header {
+    padding-top: 0;
+    padding-bottom: 0;
+    button.close {
+      margin: -0.5rem -1rem -1rem auto;
+    }
+  }
+  .modal-body {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .modal-footer {
+    justify-content: center;
+    padding-top: 0;
+  }
+}
+.remind_title {
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #0257a7;
+  margin-bottom: 5px;
+  @include media($mobile) {
+    font-size: 1.4rem;
+  }
+}
+ul {
+  padding-left: 0;
+  margin-bottom: 25px;
+  &.decimal {
+    list-style-type:decimal;
+    padding-left: 25px;
+  }
+  li {
+    // margin-bottom: 5px;
+    color: #666;
+    font-size: 1.1rem;
+    line-height: 1.75;
+  }
+}
+.sub_title {
+  padding: 5px;
+  margin-bottom: 5px;
+  background-color: #e7e7e7;
+  display: inline-block;
+  font-size: 1.2rem;
+  span {
+    font-size: 0.8em;
+    color: #848484;
+    @include media($mobile) {
+      // display: block;
+    }
+  }
+}
+.text-blue {
+  color: #0257a7;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+#modal3 {
+  background-color: inherit;
+  .modal-dialog {
+    max-width: 650px;
+  }
+  .modal-content {
+    background-color: inherit;
+    border: none;
+  }
+  button.close {
+    background-color: #fff;
+    opacity: 1;
+    border-radius: 50%;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 40px;
+    height: 40px;
+    z-index: 10;
+    box-shadow: 3px 3px 2px rgba(#000,.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    span {
+      font-size: 36px;
+      color: #666;
+    }
+    @include media($mobile) {
+      width: 30px;
+      height: 30px;
+      span {
+        font-size: 24px;
+        // line-height:30px;
+      }
+    }
+  }
+  .pop_link {
+    display: block;
+  }
+}
+// section .container-fluid{
+//   .row {
+//     padding: 10px 5px 0;
+//     background-color: #063073;
+//   }
+//   [class^="col"] {  
+//     padding: 0 5px 10px;
+//   }
+// }
+// a.sub_pd-link {
+//   display: block;
+//   position: relative;
+//   background-color: #fff;
+//   padding: 5px 5px 45px;
+//   text-align: center;
+//   color: #000;
+//   height: 100%;
+//   transition: .3s;
+//   &:hover {
+//     text-decoration: none;
+//     color: inherit;
+//     box-shadow: 3px 3px 6px rgba(#000,.2);
+//     transform: translateY(-3px);
+//   }
+//   @include media($pad) {
+//     padding: 5px 5px 35px;
+//   }
+//   @include media($mobile) {
+//     padding: 5px 5px 25px;
+//   }
+// }
+// .products_title {
+//   background-color: #d7131d;
+//   margin-bottom: 0;
+//   padding: 5px;
+//   font-size: 1.2rem;
+//   font-weight: normal;
+//   color: #fff;
+//   @include media($mobile) {
+//     font-size: 1rem;
+//   }
+// }
+// .products_name {
+//   margin: 10px 0 6px;
+//   font-size: 1.2rem;
+//   @include media($mobile) {
+//     margin: 5px;
+//     font-size: 1rem;
+//   }
+// }
+// .products_price {
+//   position: absolute;
+//   bottom: 8px;
+//   left: 5px;
+//   right: 5px;
+//   @include media($mobile) {
+//     bottom: 0;
+//   }
+//   &-pre,&-now {
+//     display: inline-block;
+//   }
+//   &-pre {
+//     text-decoration: line-through;
+//     color: #666;
+//     padding-right: 5px;
+//   }
+//   &-now {
+//     font-size: 1.5rem; 
+//     color: #ce0011;
+//     font-weight: 700;
+//     letter-spacing: -1px;
+//     margin-right: 3px;
+//     span {
+//       font-size: 0.7em;
+//       font-weight: 500;
+//     }
+//   }
+// }

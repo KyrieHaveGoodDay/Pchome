@@ -1,0 +1,16 @@
+$color: (
+  background1: #ccc,
+);
+
+%alink_Block {
+  display: block;
+  width: 100%;
+  text-decoration: none;
+} 
+
+@mixin position_ab($t:0,$l:0,$z:5) {
+  position: absolute;
+  top: $t;
+  left: $l;
+  z-index: $z;
+}

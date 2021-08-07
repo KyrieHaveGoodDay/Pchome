@@ -1,0 +1,107 @@
+.footer {
+  text-align: center;
+  background-color: #000;
+  position: relative;
+  z-index: 10;
+  &_bank {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #333333;
+    color: #fff;
+    padding: 15px 10px;
+    @include media($pad) {
+      display: block;
+    }
+    h4 {
+      color: #fff;
+      border: 1px solid white;
+      font-weight: 300;
+      font-size: 20px;
+      letter-spacing: 3px;
+      padding: 5px 20px;
+      margin: 0 10px;
+      @include media($pad) {
+        display: inline-block;
+        margin-bottom: 5px;
+      }
+    }
+    div {
+      color: white;
+      font-size: 14px;
+      font-weight: 300;
+      text-align: left;
+      a {
+        color: #009ce1;
+        text-decoration: none;
+      }
+      @include media($pad) {
+        text-align: center;
+      }
+      @include media($mobile) {
+        font-size: 12px;
+        br {
+          display: none;
+        }
+      }
+    }
+  }
+  &_pc {
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    padding: 15px 10px 15px;
+    font-size: 16px;
+    line-height: 1.75;
+    @include media($pad) {
+      font-size: 14px;
+    }
+    @include media($mobile) {
+      font-size: 11px;
+      padding: 10px 3px 10px;
+    }
+    span {
+      @include media($mobile) {
+        display: block;
+      }
+    }
+    br {
+      @include media($mobile) {
+        display: none;
+      }
+    }
+    .social {
+      padding: 0;
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      li {
+        display: inline-block;
+        margin-right: 3px;
+        img {
+          width: 40px;
+        }
+      }
+    }
+  }
+}
+// 銀行警語
+.footer_bank {
+  display: block;
+  text-align: center;
+  font-size: 14px;
+  line-height: 2;
+  letter-spacing: 1px;
+  @include media($mobile) {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+  h4 {
+    display: inline-block;
+    margin-bottom: 8px;
+  }
+  div {
+    display: block;
+  }
+}

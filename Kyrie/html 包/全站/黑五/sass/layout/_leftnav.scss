@@ -1,0 +1,292 @@
+.leftnav {
+  position: fixed;
+  top: 80px;
+  left: 0;
+  z-index: 99;
+  text-align: left;
+  @media screen and(max-width:1400px) {
+    top: 40px;
+  }
+}
+
+// 選單-關閉按鈕
+.leftnav_btn {
+  @extend %clear;
+  margin-bottom: 6px;
+  > a {
+    @extend %alink-block;
+    display: inline-block;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    background-color: #444;
+    box-shadow: 2px 2px 5px rgba(#000, 0.3);
+    transition: 0.5s;
+    &:hover {
+      background-color: #009ce1;
+    }
+    //箭頭
+    &::before,
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 20px;
+      height: 2px;
+      background-color: #fff;
+      transition: 0.5s;
+    }
+
+    &::before {
+      top: 13px;
+      left: 10px;
+      transform-origin: center;
+      transform: rotate(-40deg);
+
+      .leftnav-hide & {
+        transform: rotate(40deg);
+      }
+    }
+
+    &::after {
+      bottom: 13px;
+      left: 10px;
+      transform-origin: center;
+      transform: rotate(40deg);
+
+      .leftnav-hide & {
+        transform: rotate(-40deg);
+      }
+    }
+  }
+}
+// 選單-下方列表
+.leftnav_list {
+  @extend %ul_style-none;
+  background-color: #444;
+  color: #fff;
+  transition: 0.5s;
+  box-shadow: 2px 2px 5px rgba(#000, 0.3);
+  @include media($pad) {
+    padding: 5px;
+  }
+  li {
+    padding: 5px 0 0;
+    // 分會場
+    a {
+      @extend %alink-block;
+      padding: 5px 5px;
+      text-align: center;
+      color: #fff;
+      transition: 0.3s;
+      font-size: 15px;
+      &:hover {
+        background-color: #fff602;
+        color: #000;
+      }
+    }
+
+    //品牌館
+    &.leftnav_list-brand a {
+      &.bg_orange {
+        background-color: #eb6201;
+      }
+
+      &.bg_white {
+        background-color: #fff;
+        color: #000;
+      }
+
+      &.bg_blue {
+        background-color: #3754d0;
+        color: #fff602;
+      }
+
+      &:hover {
+        background-color: #000;
+        color: #fff602;
+      }
+    }
+
+    //廣告ad(手機才會出現)
+    &.leftnav_list-db {
+      display: none;
+    }
+  }
+
+  .leftnav-hide & {
+    transform: translateX(-200px);
+  }
+}
+.left_swiper {
+  width: 115px;
+  a {
+    padding: 0 !important;
+  }
+  @include media($pad) {
+    display: none !important;
+  }
+}
+.left_swiper .leftnav-hide {
+  pointer-events: none;
+  .leftnav_btn {
+    pointer-events: auto;
+  }
+}
+// 上方主會場大圖
+.leftnav_list-header {
+  @extend %alink-block;
+  padding: 0;
+}
+
+// title-特色主會場
+.leftnav_list-title {
+  margin-bottom: 0;
+  text-align: center;
+  color: #fff602;
+  border-bottom: 1px solid #fff602;
+  padding: 3px 0;
+  font-weight: 600;
+}
+
+//btn click後addClass
+.leftnav-hide {
+  pointer-events: none;
+  .leftnav_btn {
+    pointer-events: auto;
+  }
+}
+
+// 手機版關閉按鈕
+.leftnav_list-dismiss {
+  display: none;
+  text-align: center;
+  position: absolute;
+  right: 5px;
+  top: -40px;
+  width: 35px;
+  font-size: 24px;
+  line-height: 35px;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: #fff;
+  border-radius: 5px;
+  &:hover {
+    color: #fff;
+    text-decoration: none;
+  }
+}
+
+// 手機版固定下方面板
+.footer_board {
+  display: none;
+  width: 100%;
+  position: fixed;
+  height: auto;
+  bottom: 0;
+  z-index: 99;
+  background: linear-gradient(
+    to right,
+    #8c0000 0%,
+    #8c0000 10%,
+    #c30000 30%,
+    #c30000 50%,
+    #c30000 50%,
+    #c30000 70%,
+    #8c0000 90%,
+    #8c0000 100%
+  );
+  a {
+    width: 50%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    float: left;
+    font-size: 24px;
+    line-height: 60px;
+    color: #fff;
+    &:hover {
+      text-decoration: none;
+    }
+    img {
+      // position: relative;
+      // top: -3px;
+      margin-right: 5px;
+      width: auto;
+      height: 34px;
+    }
+    p {
+      margin: 0;
+    }
+  }
+
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 40px;
+    margin-top: 10px;
+    background-color: #fff;
+    width: 1px;
+  }
+}
+
+@media screen and(max-width: 767.98px) {
+  .leftnav_btn,
+  .leftnav_list-header,
+  .leftnav_list-title {
+    display: none;
+  }
+
+  .leftnav {
+    top: inherit;
+    bottom: 60px;
+    width: 100%;
+    z-index: 35;
+    display: none;
+
+    &.tab-show {
+      display: block;
+    }
+
+    &_list {
+      background-color: rgba(0, 0, 0, 0.3);
+
+      &:after {
+        content: "";
+        display: block;
+        clear: both;
+      }
+
+      li {
+        width: 33.33%;
+        float: left;
+        padding: 3px;
+
+        > a {
+          background-color: #fff602 !important;
+          color: #000 !important;
+          border-radius: 8px;
+        }
+      }
+    }
+  }
+
+  .footer_board,
+  .leftnav_list li.leftnav_list-db,
+  .leftnav_list-dismiss {
+    display: block;
+  }
+
+  .leftnav_list li.leftnav_list-db {
+    width: 50%;
+  }
+}
+
+@media screen and(max-width: 400px) {
+  .leftnav a {
+    font-size: 14px;
+  }
+}

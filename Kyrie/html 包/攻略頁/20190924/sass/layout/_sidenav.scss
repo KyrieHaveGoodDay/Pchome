@@ -1,0 +1,136 @@
+.sidenav {
+  position: fixed;
+  top: 140px;
+  right: 0;
+  text-align: right;
+  z-index: 50;
+  //開關按鈕
+  &_btn {
+    @extend %clear;
+    margin-bottom: 6px;
+    a {
+      @extend %alink-block;
+      display: inline-block;
+      position: relative;
+      width: 40px;
+      height: 40px;
+      background-color: #444;
+      box-shadow: 2px 2px 5px rgba(#000,.3);
+      transition: .5s;
+      &:hover {
+        background-color: #009ce1;
+      }
+      //箭頭
+      &::before, &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 20px;
+        height: 2px;
+        background-color: #fff;
+        transition: .5s;
+      }
+      &::before {
+        top: 13px;
+        left: 10px;
+        transform-origin: center;
+        transform: rotate(40deg);
+        .sidenav-hide &{
+          transform: rotate(-40deg);
+        }
+      }
+      &::after {
+        bottom: 13px;
+        left: 10px;
+        transform-origin: center;
+        transform: rotate(-40deg); 
+        .sidenav-hide &{
+          transform: rotate(40deg);
+        }
+      }
+    }
+  }
+  //下方選單
+  &_list {
+    @extend %ul_style-none;
+    background-color: #444;
+    color: #fff;
+    transition: .5s;
+    box-shadow: 2px 2px 5px rgba(#000,.3);
+    li:not(:last-child) {
+      border-bottom: 1px solid #666;
+    }
+    a {
+      @extend %alink-block;
+      transition: .5s;
+      padding: 10px 15px;
+      text-align: center;
+      color: #fff;
+      border-right: 4px solid transparent;
+      &:hover {
+        border-color: #009ce1;
+        background-color: #777;
+      }
+    }
+    .sidenav-hide & {
+      transform: translateX(200px);
+    }
+  }
+}
+.sidenav-hide {
+  pointer-events: none;
+  .sidenav_btn {
+    pointer-events: auto;
+  }
+}
+@media screen and(max-width: 767.98px) {
+  .sidenav {
+    background-color: #fff;
+    color: #888;
+    position: relative;
+    top: 0;
+    left: 0;
+    text-align: center;
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+    &_btn {
+      display: none;
+    }
+    &_list {
+      background: inherit;
+      font-size: 0;
+      white-space: nowrap;
+      color: #777;
+      box-shadow: none;
+      padding: 6px 0;
+      li {
+        display: inline-block;
+        font-size: 16px;
+        padding: 4px 0;
+        line-height: 1;
+        border-bottom: none !important;
+        &:not(:last-child) {
+          border-right: 1px solid #888 ;
+        }
+      }
+      a {
+        padding: 0 15px;
+        color: #888;
+        border: none;
+        &:hover, &:active {
+          background-color: transparent;
+        }
+      }
+    }
+    //滾動時固定在上方
+    &.fixed {
+      position: fixed;
+      top: 0;
+      box-shadow: 0 0 15px rgba(#000,.5);
+      z-index: 50;
+    }
+    &.nav-none {
+      display: none;
+    }
+  }
+}

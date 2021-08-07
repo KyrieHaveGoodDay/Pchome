@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>iPhone</title>
+  <!--CSS-->
+  <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" />
+  <link tpye="text/css" rel="stylesheet" href="css/pd.css" />
+</head>
+
+<body>
+  <!-- iPhone 商品區 -->
+  <div class="pd1 container" id="pd1">
+    <div class="row">
+      <!-- banner -->
+      <div class="col-12"><a class="pd__banner ga-bn" href="" target="_blank"><img src="img/iphone/banner01.jpg"></a></div>
+    </div>
+  </div>
+  <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript">
+    var pd1Data = [{
+      link: 'javascript:;',
+      img: 'img/iphone/pd01.jpg',
+      title: '限時下殺$401',
+      name: 'Apple iPhone 11 256G',
+      priceOld: 39900,
+      priceNew: 37999,
+    },
+    {
+      link: 'javascript:;',
+      img: 'img/iphone/pd01.jpg',
+      title: '限時下殺$401',
+      name: 'Apple iPhone 11 256G',
+      priceOld: 39900,
+      priceNew: 37999,
+    },
+    {
+      link: 'javascript:;',
+      img: 'img/iphone/pd01.jpg',
+      title: '限時下殺$401',
+      name: 'Apple iPhone 11 256G',
+      priceOld: 39900,
+      priceNew: 37999,
+    },
+    {
+      link: 'javascript:;',
+      img: 'img/iphone/pd01.jpg',
+      title: '限時下殺$401',
+      name: 'Apple iPhone 11 256G',
+      priceOld: 39900,
+      priceNew: 37999,
+    },
+    ]
+
+    function pdHtml(data, dom1, dom2) {
+      var str1 = $(dom1).html();
+      var str2 = '';
+      for (var i = 0; i < data.length; i++) {
+        str2 += '<div class="col-6 col-lg-3"><a target="_blank" class="pd__link" href="' + data[i].link + '">';
+        str2 += '<img src="' + data[i].img + '"><p class="pd__title"><span>' + data[i].title + '</span></p>';
+        str2 += '<p class="pd__name">' + data[i].name + '</p><div class="pd__price"><p class="pd__price--old">$' + data[i].priceOld + '</p>';
+        str2 += '<p class="pd__price--now"><span>$</span>' + data[i].priceNew + '</p></div></a></div>'
+      }
+      $(dom2).html(str1 + str2)
+    }
+    pdHtml(pd1Data, '.pd1 .row', '#pd1 .row');
+  </script>
+
+</body>
+
+</html>

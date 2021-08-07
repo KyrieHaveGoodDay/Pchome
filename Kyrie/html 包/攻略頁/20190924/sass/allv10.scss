@@ -1,0 +1,1057 @@
+
+//self - components
+@import url('https://fonts.googleapis.com/earlyaccess/notosanstc.css');
+@import 'init';
+
+html,
+body {
+  width: 100%;  
+  height: 100%;
+  position: relative;
+  padding-right: 0 !important;//modal 開啟抖動bug
+  -webkit-overflow-scrolling: touch; // ios滑動效果
+  font-family:'Noto Sans TC', -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft JhengHei", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+.modal-open {
+  overflow: initial !important; //modal 開啟抖動bug
+}
+a:active,
+a:focus,
+button:active,
+button:focus,
+area:active,
+area:focus {
+  box-shadow: none;
+  outline: 0;
+}
+img {
+  max-width: 100%;
+}
+
+//-------------------------------------------------//
+/* loading動畫 */
+.loading_mask {
+  position: fixed;
+  width: 100%;
+  z-index: 99;
+  height: 100%;
+  background-color: #242568;
+}
+
+.lds-ellipsis {
+  position: absolute;
+  width: 64px;
+  z-index: 99;
+  display: inline-block;
+  top: 50%;
+  left: 50%;
+  height: 64px;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.lds-ellipsis div {
+  position: absolute;
+  width: 11px;
+  z-index: 99;
+  top: 27px;
+  height: 11px;
+  border-radius: 50%;
+  background: #fff;
+  -webkit-animation-timing-function: cubic-bezier(0, 1, 1, 0);
+          animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+
+.lds-ellipsis div:nth-child(1) {
+  left: 6px;
+  -webkit-animation: lds-ellipsis1 0.6s infinite;
+          animation: lds-ellipsis1 0.6s infinite;
+}
+
+.lds-ellipsis div:nth-child(2) {
+  left: 6px;
+  -webkit-animation: lds-ellipsis2 0.6s infinite;
+          animation: lds-ellipsis2 0.6s infinite;
+}
+
+.lds-ellipsis div:nth-child(3) {
+  left: 26px;
+  -webkit-animation: lds-ellipsis2 0.6s infinite;
+          animation: lds-ellipsis2 0.6s infinite;
+}
+
+.lds-ellipsis div:nth-child(4) {
+  left: 45px;
+  -webkit-animation: lds-ellipsis3 0.6s infinite;
+          animation: lds-ellipsis3 0.6s infinite;
+}
+
+@-webkit-keyframes lds-ellipsis1 {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes lds-ellipsis1 {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@-webkit-keyframes lds-ellipsis3 {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+}
+
+@keyframes lds-ellipsis3 {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+}
+
+@-webkit-keyframes lds-ellipsis2 {
+  0% {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
+  100% {
+    -webkit-transform: translate(19px, 0);
+            transform: translate(19px, 0);
+  }
+}
+
+@keyframes lds-ellipsis2 {
+  0% {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
+  100% {
+    -webkit-transform: translate(19px, 0);
+            transform: translate(19px, 0);
+  }
+}
+.main {
+  overflow: hidden;
+  background-color: #005385;
+  padding-bottom: 50px;
+  @include media($mobile) {
+    padding-bottom: 20px;
+  }
+}
+.pc {
+  @include media($pad) {
+    display: none;
+  }
+}
+.mb {
+  display: none;
+  @include media($pad) {
+    display: block;
+  }
+}
+// 灰底方塊
+.gray_box {
+  background-color: #fff;
+  border: 3px solid #fff;
+  box-shadow: inset 0 0 20px #ededed;
+  border-radius: 6px;
+  display: block;
+}
+#section2,#section3,#section4,#section5 {
+  position: relative;
+}
+// [section外框]
+section {
+  background-color: #005385;
+}
+.section_bot {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 1500px;
+  transform: translateX(-50%);
+} 
+.section__outside {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 10px 0px 30px;
+  background-color: #c31406;
+  background-image: url('../img/section_bg.jpg');
+  background-position: top center;
+  @include media($pad) {
+    background-image: url('../img/section_bg-m.jpg');
+    background-size: contain;
+  }
+  @include media($mobile) {
+    padding: 15px 0px 20px;
+  }
+}
+.section__content {
+  max-width: 1145px;
+  margin: 0 auto;
+  padding: 0 15px;
+  position: relative;
+  @include media($mobile) {
+    padding: 0 10px;
+  }
+  .row {
+    margin-left: -8px;
+    margin-right: -8px;
+    @include media($mobile) {
+      margin-left: -5px;
+      margin-right: -5px;
+    }
+  }
+  [class^='col'] {
+    padding: 0 8px;
+    @include media($mobile) {
+      padding: 0 5px;
+    }
+  }
+}
+
+// [section-title]
+.title {
+  text-align: center;
+  margin-bottom: 25px;
+  background-image: url('../img/title_board10.png');
+  background-position: top center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  padding: 40px 0 50px;
+  @include media($pad) {
+    padding: 3vw 0 4vw;
+  }
+  @include media($mobile) {
+    margin-bottom: 15px;
+  }
+  &__sub,&__main {
+    color: #fff;
+    letter-spacing: 1px;
+    margin: 0;
+    background-position: top center;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  &__sub {
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+    @include media($pad) {
+      font-size: 3vw;
+      margin-bottom: 4px;
+    }
+  }
+  &__main {
+    font-size: 2.25rem;
+    @include media($pad) {
+      font-size: 4.5vw;
+    }
+  }
+}
+
+// [section columns link]
+.hotact a,.allpay a,{
+  margin-bottom: 16px;
+  @include media($mobile) {
+    margin-bottom: 10px;
+  }
+}
+.bank__icon a {
+  margin-bottom: 24px;
+  @include media($mobile) {
+    margin-bottom: 14px;
+  }
+}
+
+#section1 {
+  padding-top: 550px;
+  background-image:url('../img/banner10.jpg');
+  background-position: top center;
+  background-repeat: no-repeat;
+  position: relative;
+  @include media($pad) {
+    padding-top: 70vw;
+    background-image:url('../img/banner10-m.jpg');
+    background-size: contain;
+  }
+  .section__outside {
+    background-image: url('../img/section_bg-top.png');
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    position: relative;
+    z-index: 20;
+    @include media($pad) {
+      background-image: url('../img/section_bg-top-m.png');
+      background-size: cover;
+    }
+  }
+  .section__content {
+    padding-top: 30px;
+    @include media($mobile) {
+      padding-top: 15px;
+    }
+  }
+}
+
+//版頭動畫
+.tombstone {
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-62%);
+  max-width: none;
+  z-index: 1;
+  @include media($pad){
+    transform: translateX(-50%);
+    width: 120%;
+    top: 80px;
+  }
+}
+.flag1 {
+  position: absolute;
+  left: 50%;
+  top: 14%;
+  transform: translateX(-730px);
+  z-index: 2;
+}
+.flag2 {
+  position: absolute;
+  left: 50%;
+  top: 16%;
+  transform: translateX(-790px);
+  z-index: 2;
+}
+.banner_title {
+  position: absolute;
+  left: 50%;
+  top: 28%;
+  transform: translateX(-490px);
+  z-index: 2;
+}
+.banner_title-m {
+  position: absolute;
+  left: 6%;
+  top: 18%;
+  width: 20%;
+  z-index: 2;
+}
+.banner_percent {
+  position: absolute;
+  left: 50%;
+  top: 10%;
+  transform-origin: left top;
+  transform: translateX(-190px) rotate(-20deg);
+  z-index: 2;
+  @include media($pad) {
+    top: 12%;
+    width: 65%;
+    transform: translateX(-40%) rotate(-20deg);
+  }
+}
+.pot {
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  transform: translateX(-780px);
+  z-index: 2;
+}
+.bubble {
+  position: absolute;
+  bottom: 68%;
+}
+.bubble1 {
+  width: 8%;
+  left: 35%;
+  z-index: 3;
+  animation: bubble1 1s infinite;
+}
+.bubble2 {
+  left: 44%;
+  z-index: 3;
+  width: 15%;
+  animation: bubble2 2s -0.3s infinite;
+}
+.bubble3 {
+  left: 54%;
+  z-index: 3;
+  width: 15%;
+  animation: bubble3 1.6s -0.5s infinite;
+}
+.bubble4 {
+  left: 65%;
+  z-index: 3;
+  width: 10%;
+  animation: bubble4 1s -0.8s infinite;
+}
+.bubble5 {
+  left: 70%;
+  z-index: 3;
+  width: 10%;
+  animation: bubble5 1.2s -1s infinite;
+}
+.hand_left {
+  position: absolute;
+  left: 50%;
+  top: 45%;
+  z-index: 4;
+  transform-origin: bottom center;
+  transform: translateX(-550px);
+  @include media($pad) {
+    transform: translateX(0);
+    left: 0%;
+    top: 38%;
+    width: 18%;
+  }
+}
+.hand_right {
+  position: absolute;
+  left: 50%;
+  top: 45%;
+  z-index: 4;
+  transform-origin: bottom center;
+  transform: translateX(390px);
+  @include media($pad) {
+    transform: translateX(0);
+    right: 0%;
+    left: auto;
+    top: 38%;
+    width: 18%;
+  }
+}
+.house {
+  position: absolute;
+  left: 50%;
+  top: 20%;
+  z-index: 3;
+  transform: translateX(520px);
+  &__mask {
+    animation: light 1.5s infinite;
+    position: absolute;
+  }
+  @include media($pad) {
+    left: auto;
+    right: -10%;
+    top: -8%;
+    transform: translateX(0);
+    z-index: 0;
+    width: 50%;
+  }
+}
+.flyboxman {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  z-index: 5;
+  transform: translate(-2000px,-300px);
+}
+.flyboxman-m {
+  position: absolute;
+  right: 0;
+  top: 4%;
+  z-index: 6;
+  width: 30%;
+  transform: translate(1000px,-300px);
+}
+.ghost1 {
+  position: absolute;
+  left: 50%;
+  top: 55%;
+  z-index: 3;
+  transform: translateX(-1000px);
+}
+.ghost2 {
+  position: absolute;
+  left: 50%;
+  top: 30%;
+  z-index: 3;
+  transform: translateX(800px);
+}
+.pumpkin {
+  position: absolute;
+  left: 50%;
+  bottom: 7%;
+  z-index: 3;
+  transform-origin: bottom center;
+  transform: translateX(-1100px) rotate(0);
+  animation: pumpkin 2s infinite alternate;
+}
+.bat {
+  position: absolute;
+  z-index: 0;
+  transform: rotate(45deg);
+}
+.bat1 {
+  left: 65%;
+  top: 23%;
+}
+.bat2 {
+  left: 62%;
+  top: 17%;
+}
+.bat3 {
+  left: 60%;
+  top: 31%;
+}
+.bat4 {
+  left: 58%;
+  top: 35%;
+}
+.bat5 {
+  left: 65%;
+  top: 33%;
+}
+// fixed bat
+.bat6 {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  z-index: 4;
+  transform-origin: center center;
+}
+.bat7 {
+  position: absolute;
+  top: 27%;
+  left: 50%;
+  z-index: 4;
+  transform-origin: center center;
+}
+.bat8 {
+  position: absolute;
+  top: 2%;
+  left: 40%;
+  z-index: 4;
+  width: 10%;
+  transform-origin: center center;
+}
+// bubble animation
+@keyframes bubble1{
+  0% {
+    transform: translateY(0);
+  }
+  70% {
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+    transform: translateY(-60px);
+  }
+}
+@keyframes bubble2{
+  0% {
+    transform: translateY(0);
+  }
+  70% {
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+    transform: translateY(-80px);
+  }
+}
+@keyframes bubble3{
+  0% {
+    transform: translateY(0);
+  }
+  70% {
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+}
+@keyframes bubble4{
+  0% {
+    transform: translateY(0);
+  }
+  70% {
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+}
+@keyframes bubble5 {
+  0% {
+    transform: translateY(0);
+  }
+  70% {
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+}
+// house light
+@keyframes light {
+  0%{
+    opacity: 1;
+  }
+  5% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  30% {
+    opacity: 0;
+  }
+  35% {
+    opacity: 1;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+//pumpkin
+@keyframes pumpkin {
+  0% {
+    transform: translateX(-1100px) rotate(0);
+  }
+  50%{
+    transform: translateX(-1100px) rotate(10deg);
+  }
+  100%{
+    transform: translateX(-1100px) rotate(0deg);  
+  }
+}
+
+
+
+
+#section2 {
+  background: linear-gradient(180deg, #0c171f,#005385);
+  position: relative;
+  z-index: 19;
+}
+// [銀行、儲值]滑動區塊設定
+.swiper-container {
+  padding-bottom: 20px;
+  margin-bottom: 10px;
+}
+.swiper-slide {
+  position: relative;
+  background-color: #fff;
+  width: 173px;
+  padding: 6px 0 0;
+  @include media($pad) {
+    width: 180px;
+  }
+  @include media($mobile) {
+    width: 130px;
+  }
+  // hover箭頭
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    z-index: 30;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 0 0 0;
+    border-color: #fff transparent transparent transparent;
+    transition: .3s;
+  }
+}
+// 滑動區塊底部
+.bot {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .left {
+    font-size: 14px;
+    border-radius: 3px;
+    padding: 4px 3px 2px 3px;
+    background-color: #ff017f;
+    color: #fff;
+    line-height: 1.1;
+    margin: 0 10px 0 0;
+    .pay_tab & {
+      background-color: #0a9cf1;
+    }
+    @include media($pad) {
+      font-size: 12px;
+    }
+  }
+  .right {
+    font-size: 2.3rem;
+    color: #ff017f;
+    font-weight: bold;
+    margin: 0;
+    .pay_tab & {
+      color: #0a9cf1;
+    }
+    @include media($mobile) {
+      font-size: 1.5rem;
+    }
+  }
+}
+.now.swiper-slide:after {
+  bottom: -20px;
+  border-width: 20px 20px 0 20px;
+} 
+
+// [銀行]滑動區塊設定
+.bank_tab {
+  .gray_box {
+    padding: 8px 8px 0; 
+    &:nth-child(odd) h5{   
+      background-color: #ffedd3;
+    }
+    @include media($mobile) {
+      padding: 4px 4px 0;
+    }
+  }
+  h5 {
+    font-size: 2rem;
+    line-height: 1.3;
+    color: #ff007d;
+    border-radius: 8px;
+    padding: 14px 0;
+    background-color: #e9d9ff;
+    margin-bottom: 0;
+    @include media($mobile) {
+      font-size: 1.5rem;
+      margin-bottom: 5px;
+    }
+  }
+}
+// [儲值]滑動區塊設定
+.pay_tab {
+  h3 {
+    color: #333333;
+    background-color: #ffcf00;
+    border-radius: 20px;
+    text-align: center;
+    padding: 5px 10px;
+    margin:  0 5px 5px;
+    font-size: 1rem;
+    font-weight: normal;
+  }
+  h5 {
+    color: #333333;
+    font-size: 1.5rem;
+    margin-bottom: 0;
+    @include media($mobile){
+      font-size: 1.2rem;
+    }
+  }
+}
+
+// [銀行、儲值]內容區塊設定
+.bank_pane,.pay_pane {
+  margin-left: auto;
+  margin-right: auto;
+}
+.tab_content{
+  background-color: #fff;
+  margin-bottom: 10px;
+  padding: 0px;
+}
+.pane {
+  display: none;
+  &.active {
+    display: block;
+  }
+}
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include media($pad) {
+    padding: 5px 0 ;
+  }
+  .pane_text {
+    width: 55%;
+  }
+  @include media($pad) {
+    .pane_boxman {
+      display: none;
+    }
+    .pane_card {
+      width: 30%;
+    }
+    .pane_text {
+      width: 65%;
+    }
+  }
+  h4 {
+    font-size: 1.6rem;
+    margin-bottom: 0px;
+    line-height: 1.5;
+    color: #333333;
+    letter-spacing: 1px;
+    span {
+      color: #ff017f;
+      .pay_pane & {
+        color: #0a9cf1;
+      }
+    }
+    @include media($padLg) {
+      font-size: 1.2rem;
+    }
+    @include media($pad) {
+      font-size: 1rem;
+    }
+    @include media($mobile) {
+      font-size: 12px;
+      letter-spacing: 0;
+      br {
+        display: none;
+      }
+    }
+  }
+  p {
+    color: #333333;
+    font-size: 16px;
+    margin-bottom: 5px;
+    @include media($mobile) {
+      font-size: 12px;
+    }
+  }
+  .bank_btn {
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.3;
+    margin: 5px 0;
+    padding: 4px 35px;
+    border-radius: 20px;
+    background-color: #ff007d;
+    color: #fff;
+    box-shadow: 2px 2px 0 1px #ffd0d7;
+    @include media($mobile) {
+      margin: 0 0 5px;
+    }
+    .pay_pane &{
+      background-color: #0a9cf1;
+      box-shadow: 2px 2px 0 1px #84d5ff;
+      &:hover {
+        background-color: #1890ce;
+      }
+    }
+    &:hover {
+      color: #fff;
+      background-color: #ee2588;
+    }
+    &:active {
+      transform: translateY(3px);
+    }
+    @include media($mobile) {
+      line-height: 1.2;
+      font-size: 14px;
+      padding: 2px 30px;
+      border-radius: 15px;
+    }
+  }
+}
+//銀行pane新版
+.bank_pane .content {
+  padding: 10px 0px;
+}
+.bank_pane .col-12:nth-child(2){
+  @include media($pad) {
+    margin-top: 15px;
+    padding-top: 15px;
+  }
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    border-radius: 5px;
+    height: 80%;
+    background-color: #d2d2d2;
+    @include media($pad) {
+      left: 50%;
+      transform: translateX(-50%);
+      width: 85%;
+      height: 3px;
+    }
+  }
+}
+.pane__top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 12px;
+  &--text {
+    h5 {
+      color:#333333;
+      font-size: 1.75rem;
+      font-weight: 300;
+      line-height: 1.3;
+      margin-bottom: 0;
+      @include media($mobile){
+        font-size: 5vw;
+      }
+    }
+  }
+  &--img {
+    max-width: 50%;
+  }
+  .bot {
+    justify-content: flex-start;
+    .left {
+      margin-right: 5px;
+    }
+    .right {
+      font-size: 1.75rem;
+    }
+  }
+}
+
+
+
+
+// [section3] --bankicon
+.bank__icon {
+  &--link {
+    display: block;
+    img {
+      transition: .5s;
+    }
+    &:hover {
+      text-decoration: none;
+      img {
+        transform: scale(0.9);
+      }
+      .bank__icon--name:before,.bank__icon--name:after {
+        width: 30%;
+      }
+    }
+  }
+  &--name {
+    color: #fff;
+    margin-top: 4px;
+    font-size: 1.75rem;
+    font-weight: 300;
+    position: relative;
+    @include media($pad) {
+      font-size: 1.2rem;
+    }
+    @include media($mobile) {
+      font-size: 1rem;
+    }
+    &:before {
+      content: '';
+      display: inline-block;
+      position: absolute;
+      bottom: 0;
+      width: 0%;
+      left: 50%;
+      height: 1px;
+      background-color: #fff;
+      transition: .3s;
+    }
+    &:after {
+      content: '';
+      display: inline-block;
+      position: absolute;
+      bottom: 0;
+      width: 0%;
+      right: 50%;
+      height: 1px;
+      background-color: #fff;
+      transition: .3s;
+    }
+  }
+}
+.col-1-5 { 
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex: 0 0 20%;
+  max-width: 20%;
+  width: 100%;
+  text-align: center;
+  padding: 0 15px !important;
+  @include media($pad) {
+    flex: 0 0 33%;
+    max-width: 33%;
+  }
+  @include media($mobile) {
+    
+  }
+}
+
+// [section4] --allpay
+.allpay a.gray_box{
+  position: relative;
+  overflow: hidden;
+  padding: 0 !important;
+  img {
+    transition: .3s;
+  }
+  &:hover img{
+    transform: scale(0.9);
+  }
+}
+
+// [section5] --pcoin
+.pcoin {
+  text-align: center;
+}
+.btn_pcoin {
+  display: inline-block;
+  padding: 2px 25px;
+  margin-top: 25px;
+  font-size: 1.75rem;
+  color: #035545;
+  background-color: #efefef;
+  border-radius: 5px; 
+  @include media($mobile){
+    font-size: 1.25rem;
+    padding: 2px 18px;
+    margin-top: 18px;
+  }
+}
+
+// [section6] --hotact
+#section6 .section__outside{
+  padding-bottom: 50px;
+}
+.hotact a {
+  background-color: #fff;
+  display: block;
+  transition: .3s;
+  img {
+    transition: .3s;
+  }
+  &:hover {
+    transform: translateY(-2px);
+    img {
+      opacity: 0.7;
+    }
+  }
+}
+
+

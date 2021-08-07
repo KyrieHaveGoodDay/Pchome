@@ -1,0 +1,176 @@
+//slogan
+.slogan {
+    background-color: #333;
+    padding: 20px 0;
+    text-align: center;
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        h5 {
+            margin-bottom: 0;
+            margin-right: 10px;
+            padding: 5px 15px;
+            font-weight: 300;
+            border: 1px solid white;
+            letter-spacing: 2px;
+        }
+        p {
+            font-weight: 300;
+            margin-bottom: 0;
+        }
+    }
+}
+
+
+// footer
+.footer {
+    width: 100%;
+    text-align: center;
+    color: #b0b0b0;
+    padding: 15px 10px 20px;
+    line-height: 28px;
+    font-size: 16px;
+}
+
+// goTop
+.right_box {
+    display: none;
+    width: 50px;
+    position: fixed;
+    bottom: 20px;
+    right: 8px;
+    z-index: 99;
+    overflow: inherit;
+    transition: 0s;
+    img {
+        width: 100%;
+    }
+}
+.gotop {
+    width: 42px;
+    height: 42px;
+    overflow: hidden;
+    cursor: pointer;
+    background-color: rgba(164, 164, 164, 0.85);
+    padding: 7px 6px 3px;
+    border-radius: 100%;
+    transition: 0.3s;
+    &:hover {
+        background-color: rgba(164, 164, 164, 1);
+    }
+}
+
+// 置底APP Banner
+.app_download {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    z-index: 9;
+    text-align: center;
+    img {
+        display: block;
+    }
+}
+.app_box {
+    width: 768px;
+    max-width: 100%;
+    margin: auto;
+    position: relative;
+    z-index: 99;
+}
+.app_close {
+    z-index: 99;
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 1em;
+    color: #fff;
+    text-align: center;
+    border-radius: 100%;
+    cursor: pointer;
+    background-color: #000;
+}
+.footer.noAPP, .noAPP {
+    padding-bottom: 20px !important;
+}
+.right_box.noAPP {
+    bottom: 0;
+}
+.right_box.useAPP {
+    bottom: 10px;
+}
+.footer.useAPP {
+    padding-bottom: 20px;
+}
+
+@media only screen and (max-width: 991.98px) {
+    .slogan .container {
+        display: block;
+        h5 {
+            display: inline-block;
+            margin-bottom: 10px;
+            margin-right: 0;
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .app_download.mobile, .header_mobile, .mobile { 
+        display: block; 
+    }
+    .footer { 
+        line-height: 1.5; 
+        font-size: 11px; 
+        padding-bottom: 20%; 
+    }
+    .right_box { 
+        bottom: 11%; 
+    }
+}
+@media only screen and (max-width: 767px) {
+    .app_close { 
+        top: 5px; 
+        right: 5px; 
+        width: 25px; 
+        height: 25px; 
+        line-height: 25px; 
+    }
+}
+@media only screen and (max-width: 480px) {
+    .footer span { 
+        display: block; 
+    }
+    .footer br { 
+        display: none; 
+    }
+    .app_close { 
+        width: 20px; 
+        height: 20px; 
+        line-height: 20px; 
+        font-size: 0.8em; 
+    }
+    .right_box { 
+        bottom: 12%; 
+        width: 42px; 
+    }
+    .fb_box  { 
+        padding: 6px 5px 4px; 
+    }
+    .line_box { 
+        padding: 9px 7px 6px; 
+        margin: 8px 0; 
+    }
+    .gotop { 
+        padding: 8px 6px 4px; 
+    }
+}
+@media only screen and (max-width: 330px) {
+    .footer { 
+        padding: 15px 0 20px; 
+    }
+}

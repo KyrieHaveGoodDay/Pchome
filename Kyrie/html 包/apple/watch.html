@@ -1,0 +1,172 @@
+<!DOCTYPE html PUBLIC"-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> <html>
+
+<head>
+  <base href="" id="base">
+  <script>
+    var isOnline = location.host.indexOf('pchomeec'); // check online
+    var urlStlye = location.host.indexOf('www');      // check url style
+    var baseTag = document.getElementById("base");
+    var loadURL;   // use for jQ load & pages-link
+    var sites;     // now sites
+    if (isOnline == -1) {
+      console.log('local');
+      loadURL = "";
+      baseTag.href = "";
+    } else {
+      console.log('online')
+      sitesIndex = location.pathname.split('/');
+      sites = sitesIndex[sitesIndex.indexOf('sites') + 1];
+      baseTag.href = '//a.ecimg.tw/img/sites/' + sites + '/';
+      if (isOnline && (urlStlye !== -1)) {
+        console.log('url1')
+        loadURL = 'https://www.pchomeec.tw/cdn/sites/' + sites + '/';
+      } else if (isOnline && (urlStlye == -1)) {
+        console.log('url2')
+        loadURL = 'https://' + sites + '.pchomeec.tw/cdn/sites/' + sites + '/';
+      }
+    }
+  </script>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>【PChome24h購物】Apple旗艦館 Watch</title>
+  <meta property="og:title" content="【PChome24h購物】Apple旗艦館 Watch" />
+  <meta property="og:description" content="台北市6小時到貨(試營運)，全台灣24小時到貨！" />
+  <meta name="keywords" content="apple,iphone,mac,ipad" />
+  <meta property="og:image" content="//a.ecimg.tw/css/2016/style/images/v201607/sitelogo/h24.png" />
+  <link rel="apple-touch-icon" href="//a.ecimg.tw/css/2016/style/images/v201607/sitelogo/h24.png" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="renderer" content="webkit|ie-comp|ie-stand" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="format-detection" content="address=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, shrink-to-fit=no, user-scalable=0" />
+  <link rel="apple-touch-icon" type="image/x-icon" href="https://e.ecimg.tw/img/icon/24-64x64.ico" sizes="64x64" />
+  <link rel="icon" type="image/x-icon" href="https://e.ecimg.tw/img/icon/24-64x64.ico" sizes="64x64" />
+  <link rel="icon" type="image/x-icon" href="https://e.ecimg.tw/img/icon/24-32x32.ico" sizes="32x32" />
+  <link rel="icon" type="image/x-icon" href="https://e.ecimg.tw/img/icon/24-16x16.ico" sizes="16x16" />
+  <!--CSS-->
+  <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" />
+  <link tpye="text/css" rel="stylesheet" href="css/swiper.min.css" />
+  <link tpye="text/css" rel="stylesheet" href="css/all_0519.css" />
+  <style>
+    @media screen and (min-width: 769px) {
+      .nav__tab:nth-child(5)>a {
+        color: #fff;
+      }
+    }
+  </style>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      site: "24h"
+    });
+    window.dataLayer &&
+      window.dataLayer.push({
+        event: "custom.event.pageview"
+      });
+  </script>
+  <!-- Google Tag Manager -->
+  <script>
+    (function (w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({
+        "gtm.start": new Date().getTime(),
+        event: "gtm.js"
+      });
+      var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s),
+        dl = l != "dataLayer" ? "&l=" + l : "";
+      j.async = true;
+      j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, "script", "dataLayer", "GTM-TKSM5PF");
+  </script>
+  <!-- End Google Tag Manager -->
+</head>
+
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TKSM5PF" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <div class="mask"></div>
+
+  <div id="header">
+    <!-- in header.html -->
+  </div>
+
+  <!-- [main] -->
+  <div class="main">
+
+    <!---- [ banner ] ---->
+    <div class="banner ga-slider" data-class="U">
+      <!-- Swiper -->
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <a target="_blank" href="" target="_blank" class="swiper-slide ga-bn">
+            <img class="pc" src="img_watch/slider01.png">
+            <img class="mb" src="img_watch/slider01_mb.png">
+          </a>
+        </div>
+        <!-- Add Arrows -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+    <!---- END [ banner ] ---->
+
+    <div data-class="V">
+      <!----版身1 ---->
+      <div class="pd pd--fluid">
+        <a class="pd__banner ga-bn" href="" target="_blank">
+          <img class="pc" src="img_watch/banner02.jpg">
+          <img class="mb" src="img_watch/banner02_mb.jpg">
+        </a>
+      </div>
+      <!----END 版身1 ---->
+
+    </div>
+  </div>
+  <!-- END MAIN -->
+
+  <!-- Footer -->
+  <div id="footer">
+    <!-- in footer.html -->
+  </div>
+  <!-- END Footer -->
+
+  <!-- 影片燈箱 -->
+  <!-- Modal -->
+  <div class="modal fade" id="video" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="" id="modal-video" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="js/day.min.js"></script>
+  <script type="text/javascript">
+    $('#header').load(loadURL + 'header.html');
+    $('#footer').load(loadURL + 'footer.html');
+  </script>
+  <script type="text/javascript" src="js/popper.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/swiper.min.js"></script>
+  <script type="text/javascript" src="js/scrollreveal.min.js"></script>
+  <script type="text/javascript" src="js/all_0519.js"></script>
+  <script type="text/javascript" src="js/ga.js"></script>
+
+
+</body>
+
+</html>

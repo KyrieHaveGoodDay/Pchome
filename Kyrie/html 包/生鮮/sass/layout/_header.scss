@@ -1,0 +1,64 @@
+$headerBG: #dc0001;
+
+header {
+  background-color: $headerBG;
+  position: relative;
+  padding: 10px 0;
+  overflow: hidden;
+  @include media($pad) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 60;
+    height: 40px;
+  }
+  > .container {
+    max-width: 1140px;
+    padding: 0;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    @include media($wide) {
+      max-width: 960px;
+    }
+    @include media($padLg) {
+      justify-content: center;
+    }
+  }
+  .header__logo {
+    display: block;
+    max-width: 168px;
+    margin-right: 12px;
+    @include media($pad) {
+      max-width: 150px;
+    }
+  }
+  .header__shoplist,
+  .header__memberlist {
+    line-height: 12px;
+    @include media($padLg) {
+      display: none;
+    }
+    li {
+      display: inline-block;
+      line-height: 1.1;
+    }
+    a {
+      color: #fff;
+      font-size: 12px;
+      font-weight: 300;
+    }
+  }
+  .header__shoplist li {
+    padding: 0 10px;
+    border-left: 1px solid #fff;
+    &:last-child {
+      border-right: 1px solid #fff;
+    }
+  }
+  .header__memberlist li {
+    padding: 0 3px;
+  }
+}

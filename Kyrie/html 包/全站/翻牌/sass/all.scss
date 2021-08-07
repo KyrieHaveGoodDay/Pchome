@@ -1,0 +1,350 @@
+@import "init";
+.grid {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  width: 1px;
+  height: 100%;
+  background-color: red;
+  z-index: 50;
+  &.grid1 {
+    transform: translateX(-384px);
+  }
+  &.grid2 {
+    transform: translateX(384px);
+  }
+}
+
+.ie-mask {
+  opacity: 0.8;
+  position: absolute;
+  z-index: 99;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: #000;
+  display: none;
+  h3 {
+    width: 100%;
+    line-height: 2;
+    font-size: 2.5rem;
+    font-weight: 500;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 1;
+    color: #fff;
+    @include media($pad) {
+      font-size: 5vw;
+    }
+  }
+}
+.main {
+  height: calc(100vh - 40px);
+  background-image: url("../img/bg.jpg");
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  @media screen and(max-width: 1060px) {
+    height: calc(100vh - 30px);
+  }
+}
+// modal1
+.popup {
+  max-width: 525px;
+  position: relative;
+  padding: 30px 0;
+  &__content {
+    width: 80%;
+    margin: -100px 10% 0;
+    padding: 10px;
+    background-color: #15a7eb;
+    border-radius: 15px;
+    &--inner {
+      text-align: center;
+      background-color: #fffcd9;
+      border-radius: 15px;
+      padding: 90px 15px;
+      box-shadow: inset 3px 3px 3px #c3c1a6;
+      @include media($mobile) {
+        padding-bottom: 15vw;
+      }
+    }
+  }
+  &__btn {
+    display: block;
+    text-align: center;
+    margin-top: -80px;
+    position: relative;
+    @include media($mobile) {
+      margin-top: -15vw;
+    }
+  }
+  &__hand {
+    position: absolute;
+    right: 10%;
+    top: -20%;
+    width: 20%;
+    animation: hand 0.5s infinite alternate;
+  }
+  &__start {
+    width: 60%;
+  }
+  .day {
+    margin-bottom: 30px;
+    word-break: break-all;
+  }
+}
+.popup.pop2 {
+  max-width: 550px;
+  position: relative;
+  .popup__title {
+    position: relative;
+    z-index: 2;
+  }
+  .box {
+    position: absolute;
+    right: -15%;
+    top: 30%;
+    z-index: 3;
+    width: 30%;
+    @include media($mobile) {
+      width: 27%;
+    }
+  }
+  .popup__content {
+    width: 86%;
+    margin: -100px 7% 0;
+    @include media($mobile) {
+      width: 92%;
+      margin: -70px 4% 0;
+    }
+    &--inner {
+      position: relative;
+      z-index: 1;
+      @include media($mobile) {
+        padding-top: 60px;
+      }
+    }
+    h4 {
+      font-size: 1.25rem;
+      margin-bottom: 5px;
+    }
+    &--inner {
+      padding-bottom: 10px;
+      @include media($mobile) {
+        padding-bottom: 10px;
+      }
+    }
+    &--prizes {
+      font-size: 2rem;
+      color: #eb6100;
+      font-weight: bold;
+      margin-bottom: 5px;
+      @include media($mobile) {
+        font-size: 1.6rem;
+      }
+    }
+    &--btns {
+      a {
+        display: inline-block;
+        padding: 0 5px;
+        width: 42%;
+        @include media($mobile) {
+          width: 46%;
+        }
+      }
+    }
+  }
+  .popup__remind {
+    margin: 10px;
+    @include media($mobile) {
+      margin: 10px 0 0;
+    }
+    img {
+      width: 25%;
+      @include media($mobile) {
+        width: 30%;
+      }
+    }
+    ul {
+      list-style: decimal;
+      padding-left: 20px;
+      margin: 0;
+      color: #fff;
+      font-size: 14px;
+      @include media($mobile) {
+        padding-left: 15px;
+        font-size: 12px;
+      }
+    }
+  }
+}
+@keyframes hand {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  100% {
+    transform: translate(-5px, 5px);
+  }
+}
+// main game
+.game {
+  position: relative;
+  max-width: 768px;
+  height: 100%;
+  padding: 30px 0;
+  @include media($pad) {
+    height: auto;
+  }
+  &__bg {
+    height: 100%;
+    width: auto;
+    @include media($pad) {
+      height: auto;
+    }
+  }
+}
+//卡片區
+.game__content {
+  position: absolute;
+  background-color: #fffcd9;
+  max-width: 92%;
+  top: 38%;
+  left: 4%;
+  width: 100%;
+  border: 4px solid #3ebaef;
+  box-shadow: inset 0 0 6px #6f6e5c;
+  border-radius: 16px;
+  .container-fluid {
+    padding: 12px 12px 2px;
+  }
+  .row {
+    margin-left: -5px;
+    margin-right: -5px;
+  }
+  [class^="col"] {
+    padding: 0 5px;
+    margin-bottom: 10px;
+  }
+}
+.game__time {
+  position: absolute;
+  top: 18%;
+  right: 5%;
+  padding: 0 8px 6px;
+  border-bottom: 2px solid #000;
+  @media screen and(max-height: 1100px) {
+    right: 3vh;
+    top: 17vh;
+  }
+  @media screen and(max-height: 800px) {
+    right: 2vh;
+  }
+  @include media($pad) {
+    top: 18%;
+    right: 4vw;
+    padding: 0 2vw 0;
+  }
+  @include media($mobile) {
+    top: 19%;
+    padding: 0 2vw 5px;
+  }
+  p {
+    text-align: right;
+    font-size: 1.7rem;
+    font-weight: bold;
+    @media screen and(max-height: 1100px) {
+      font-size: 3vh;
+    }
+    @include media($pad) {
+      font-size: 5vw;
+    }
+  }
+  h3 {
+    font-size: 5.8rem;
+    font-weight: bold;
+    margin-bottom: 0;
+    line-height: 0.8;
+    @media screen and(max-height: 1100px) {
+      font-size: 8vh;
+    }
+    @include media($pad) {
+      font-size: 13.5vw;
+    }
+  }
+  &--text {
+    font-size: 0.7em;
+  }
+}
+
+//卡片本體
+.flip__card--container {
+  position: relative;
+  width: 100%;
+  z-index: 1;
+  perspective: 1000;
+  img {
+    display: block;
+  }
+}
+.flip__card--item {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  transform-style: preserve-3d;
+  transition: all 0.3s linear;
+}
+// 卡片狀態
+.box-shadow {
+  box-shadow: 0 0 0 2px #000, 0 0 10px 5px #000;
+}
+.rotation {
+  transform: rotateY(180deg);
+  pointer-events: none;
+}
+.pointer-none {
+  pointer-events: none;
+}
+
+// 正、反面
+.face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 3px solid #2292e1;
+  box-shadow: 0 4px 3px #dcc386;
+  @media screen and(max-height: 1000px) {
+    border-radius: 2vh;
+  }
+  @include media($pad) {
+    border-radius: 3vw;
+  }
+  @include media($mobile) {
+    border-width: 2px;
+    box-shadow: 0 3px 2px #dcc386;
+  }
+}
+.face.back {
+  display: block;
+  transform: rotateY(180deg);
+  border: 6px solid #2292e1;
+  transition: border 0.3s;
+  @include media($mobile) {
+    border-width: 4px;
+  }
+}
+.border--light {
+  border-color: #ff9800 !important;
+}

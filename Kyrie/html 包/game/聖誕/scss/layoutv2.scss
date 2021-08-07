@@ -1,0 +1,37 @@
+@import 'layout/header';
+// @import 'layout/mobile-top_nav';
+// @import 'layout/side_nav';
+// @import 'layout/footer'; //footer, backtoTop, app banner
+ul {
+  margin-top: 0;
+}
+html,
+body {
+    height: 100%;
+    width: 100%;
+    padding-right: 0 !important;//modal 開啟抖動bug
+    -webkit-overflow-scrolling: touch; // ios滑動效果
+}
+img {
+  max-width: 100%;
+}
+.modal-open {
+  overflow: initial !important; //modal 開啟抖動bug
+}
+
+a:active,
+a:focus,
+button:active,
+button:focus,
+area:active,
+area:focus {
+    box-shadow: none;
+    outline: 0;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+

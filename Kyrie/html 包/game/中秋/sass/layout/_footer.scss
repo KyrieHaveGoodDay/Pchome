@@ -1,0 +1,113 @@
+.footer {
+  text-align: center;
+  &_bank {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #333333;
+    color: #fff;
+    padding: 15px 10px;
+    @include media($pad){
+      display: block;
+    } 
+    h4 {
+      color: #fff;
+      border: 1px solid white;
+      font-weight: 300;
+      font-size: 20px;
+      letter-spacing: 3px;
+      padding: 5px 20px;
+      margin: 0 10px;
+      @include media($pad){
+        display: inline-block;
+        margin-bottom: 5px;
+      } 
+    }
+    div {
+      color: white;
+      font-size: 14px;
+      font-weight: 300;
+      text-align: left;
+      a {
+        color: #009ce1;
+        text-decoration: none;
+      }
+      @include media($pad){
+        text-align: center;
+      }
+      @include media($mobile){
+        br {
+          display: none;
+        }
+      }  
+    }
+  }
+  &_pc {
+    width: 100%;
+    text-align: center;
+    color: #b0b0b0;
+    padding: 15px 10px 15px;
+    font-size: 16px;
+    line-height: 1.75;
+    @include media($pad) {
+      font-size: 14px;
+    }
+    @include media($mobile) {
+      font-size: 11px;
+      padding: 10px 3px 10px;
+    }
+    span {
+      @include media($mobile) {
+        display: block;
+      }
+    }
+    br {
+      @include media($mobile) {
+        display: none;
+      }
+    }
+  }
+}
+// 銀行警語
+.footer_bank {
+  display: block;
+  text-align: center;
+  h4{
+    display: inline-block;
+    margin-bottom: 8px;
+  }
+  div {
+    display: block;
+  }
+}
+// footer手機版下載
+.app_download {
+  display: none;
+  @include media($pad) {
+    display: block;
+    position: fixed;
+    z-index: 999;
+    bottom: 0;
+    max-width: 100%;
+    &-close {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      background-color: #333333;
+      color: #fff;
+      text-align: center;
+      @include media($mobile) {
+        font-size: 14px;
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+      }
+    }
+  }
+  a {
+    display: block;
+  }
+}

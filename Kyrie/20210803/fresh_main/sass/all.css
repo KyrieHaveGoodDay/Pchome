@@ -819,9 +819,10 @@ img {
 
 @media screen and (max-width: 768px) {
   .banner_left {
-    width: 345px;
+    width: 100%;
     margin: 0 auto;
     margin-bottom: 20px;
+    padding: 0 15px;
   }
 }
 
@@ -873,7 +874,7 @@ img {
 }
 
 .banner_right {
-  background-image: url(/fresh_main/img/main-right2.jpg);
+  background-image: url(../img/main-right2.jpg);
   background-position: center top;
   background-size: cover;
   position: relative;
@@ -883,20 +884,63 @@ img {
 
 @media screen and (max-width: 768px) {
   .banner_right {
-    width: 345px;
-    height: 153px;
+    width: 100%;
+    height: 300px;
     margin: 0 auto;
+    padding: 0 15px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .banner_right {
+    height: 250px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .banner_right {
+    height: 200px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .banner_right {
+    height: 150px;
   }
 }
 
 .banner_right .banner_right_text {
-  width: 100%;
+  width: 768px;
   color: white;
   background-color: #c53b3b;
   text-align: center;
   padding: 0.2rem 0 0.6rem;
   position: absolute;
   bottom: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .banner_right .banner_right_text {
+    width: 738px;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .banner_right .banner_right_text {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  .banner_right .banner_right_text {
+    width: 384px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .banner_right .banner_right_text {
+    width: 345px;
+  }
 }
 
 .banner_right .banner_right_text p {
@@ -968,9 +1012,10 @@ img {
 
 @media screen and (max-width: 768px) {
   .eat_top {
-    width: 345px;
+    width: 100%;
     margin: 0 auto;
     display: block;
+    padding: 0 15px;
   }
 }
 
@@ -1054,7 +1099,7 @@ img {
 
 @media screen and (max-width: 768px) {
   .fresh {
-    width: 345px;
+    width: 100%;
     margin: 0 auto;
   }
 }
@@ -1141,8 +1186,9 @@ img {
 
 @media screen and (max-width: 768px) {
   .shop {
-    width: 345px;
+    width: 100%;
     margin: 0 auto;
+    padding: 0 15px;
   }
 }
 
@@ -1207,7 +1253,7 @@ img {
 
 @media screen and (max-width: 768px) {
   .shop_title {
-    width: 345px;
+    width: 100%;
     margin: 0 auto;
   }
 }
@@ -1242,7 +1288,7 @@ img {
 
 @media screen and (max-width: 768px) {
   .product {
-    width: 345px;
+    width: 100%;
     margin: 0 auto;
   }
 }
@@ -1310,6 +1356,13 @@ img {
 .brands-box {
   margin: 4rem 0;
   position: relative;
+}
+
+@media screen and (max-width: 768px) {
+  .brands-box {
+    width: 100%;
+    padding: 0 15px;
+  }
 }
 
 .brands_title {
@@ -1435,11 +1488,12 @@ img {
 @media screen and (max-width: 768px) {
   .activities {
     display: block;
-    width: 345px;
+    width: 100%;
     height: 100%;
     margin: 0 auto;
     margin-top: 2rem;
     margin-bottom: 1.8rem;
+    padding: 0 15px;
   }
 }
 

@@ -207,9 +207,10 @@ $main_width: 1170px;
     padding: 0;
     position: relative;
     @media screen and (max-width: 768px) {
-        width: 345px;
+        width: 100%;
         margin: 0 auto;
         margin-bottom: 20px;
+        padding: 0 15px;
     }
 
     span {
@@ -271,20 +272,46 @@ $main_width: 1170px;
     width: 100%;
     padding: 0;
     @media screen and (max-width: 768px) {
-        width: 345px;
-        height: 153px;
+        width: 100%;
+        height: 300px;
         margin: 0 auto;
+        padding: 0 15px;
         //    width: 345px;
         //    height: 151px;
     }
+    @media screen and (max-width: 650px) {
+       height: 250px;
+    }
+    @media screen and (max-width: 450px) {
+        height: 200px;
+     }
+     @media screen and (max-width: 400px) {
+        height: 150px;
+     }
     .banner_right_text {
-        width: 100%;
+        width: 768px;
         color: rgb(255, 255, 255);
         background-color: rgb(197, 59, 59);
         text-align: center;
         padding: 0.2rem 0 0.6rem;
         position: absolute;
         bottom: 0;
+        @media screen and (max-width: 768px) {
+            width: 738px;
+            // padding: 0 15px;
+        }
+        @media screen and (max-width: 750px) {
+            width: 100%;
+            // padding: 0 15px;
+        }
+        @media screen and (max-width: 414px) {
+            width: 384px;
+            // padding: 0 15px;
+        }
+        @media screen and (max-width: 375px) {
+            width: 345px;
+            // padding: 0 15px;
+        }
         p {
             font-size: 1.5rem;
             font-weight: 300;
@@ -335,9 +362,10 @@ $main_width: 1170px;
         width: 1000px;
     }
     @media screen and (max-width: 768px) {
-        width: 345px;
+        width: 100%;
         margin: 0 auto;
         display: block;
+        padding: 0 15px;
     }
 }
 .eat_box {
@@ -387,7 +415,7 @@ $main_width: 1170px;
         width: 1000px;
     }
     @media screen and (max-width: 768px) {
-        width: 345px;
+        width: 100%;
         margin: 0 auto;
     }
 
@@ -449,8 +477,9 @@ $main_width: 1170px;
         width: 1000px;
     }
     @media screen and (max-width: 768px) {
-        width: 345px;
+        width: 100%;
         margin: 0 auto;
+        padding: 0 15px;
     }
 }
 //按鈕
@@ -497,7 +526,7 @@ $main_width: 1170px;
         width: 1000px;
     }
     @media screen and (max-width: 768px) {
-        width: 345px;
+        width: 100%;
         margin: 0 auto;
     }
     p {
@@ -521,7 +550,7 @@ $main_width: 1170px;
         margin: 0;
     }
     @media screen and (max-width: 768px) {
-        width: 345px;
+        width: 100%;
         margin: 0 auto;
     }
 }
@@ -574,6 +603,10 @@ $main_width: 1170px;
 .brands-box {
     margin: 4rem 0;
     position: relative;
+    @media screen and (max-width: 768px){
+        width: 100%;
+        padding: 0 15px;
+    }
 }
 .brands_title {
     margin-bottom: 1rem;
@@ -675,11 +708,12 @@ $main_width: 1170px;
     }
     @media screen and (max-width: 768px) {
         display: block;
-        width: 345px;
+        width: 100%;
         height: 100%;
         margin: 0 auto;
         margin-top: 2rem;
         margin-bottom: 1.8rem;
+        padding: 0 15px;
     }
     .activities_left {
         width: 369px;

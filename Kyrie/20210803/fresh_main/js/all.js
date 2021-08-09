@@ -79,8 +79,13 @@ var swiper2 = new Swiper(".myProduct", {
       slidesPerView: 5.5,
       paceBetween: 20
     },
+    600:{
+      slidesPerView:4.2,
+      paceBetween: 20
+    },
     500:{
       slidesPerView:2.2,
+      paceBetween: 20
     },
     400: {
       slidesPerView: 2.2,
@@ -99,6 +104,12 @@ var swiper3 = new Swiper(".myBrands", {
     1024:{
       slidesPerView: 5.5,
       paceBetween: 20
+    },
+    760:{
+      slidesPerView:5.2,
+    },
+    600:{
+      slidesPerView:4.5,
     },
     500:{
       slidesPerView:2.2,

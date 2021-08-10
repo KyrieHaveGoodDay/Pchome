@@ -80,3 +80,59 @@
     height: 5px;
     background-color: #642f24;
 }
+// 夏天必備單品
+section{
+    max-width: 1000px;
+    margin: 60px auto 0;
+    text-align: center;
+}
+.title_img{
+    padding: 0 10px;
+}
+.product_box{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+
+    margin-top: 15px;
+    padding: 0 5px;
+}
+.product{
+    padding: 0 5px;
+    margin-bottom: 10px;
+    a{
+        display: block;
+        position: relative;
+        background-color: #fff;
+        padding: 0 5px 45px;
+        transition: 0.3s;
+        text-align: center;
+        color: inherit;
+        height: 100%;
+        h4{
+            background-color: #d7131d;
+            margin-bottom: 0;
+            padding: 5px;
+            font-size: 1rem;
+            font-weight: normal;
+            color: #fff;
+        }
+        .price{
+            position: absolute;
+            bottom: 8px;
+            left: 5px;
+            right: 5px;
+            p{
+                font-size: 1.5rem;
+                color: #ce0011;
+                font-weight: 700;
+                letter-spacing: -1px;
+                margin-right: 3px;
+                display: inline-block;
+                span{
+                    font-size: 0.2rem;
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+}

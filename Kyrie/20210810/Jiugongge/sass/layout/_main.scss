@@ -1,0 +1,82 @@
+.main{
+    background-image: url(/img/bg.png);
+    background-repeat: repeat;
+}
+// 卷軸區
+.rell{
+    max-width: 1050px;
+    margin: 0 auto;
+    padding: 0 40px;
+    position: relative;
+}
+.rell_top{
+    position: absolute;
+    left: 0;
+    top: -15px;
+
+}
+.rell_bot{
+    position: absolute;
+    bottom: -15px;
+    left: 0;
+    
+
+}
+.rell_bg{
+    background-color: #e2b957;
+    padding: 45px 30px;
+}
+.reel_content{
+    background-image: url(/img/game_bg.png);
+    box-shadow: 5px 5px 5px rgb(0,0,0 /40%);
+}
+.reel_content__title{
+    padding: 15px;
+}
+.game{
+    position: relative;
+}
+// 遊戲邊框
+.game_light{
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+}
+// 遊戲內容
+.game_conteent{
+    position: absolute;
+    top: 70px;
+    left: 80px;
+}
+.game_content_9{
+    display: grid;
+    grid-template-columns: repeat(3,1fr );
+}
+.game_btn{
+    margin: 0 auto;
+}
+
+// 注意事項
+.reemind{
+    padding: 10px 10px 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.reemind::before{
+    content: '';
+    display: block;
+    margin: 0 20px;
+    width: 20%;
+    height: 5px;
+    background-color: #642f24;
+}
+.reemind::after{
+    content: '';
+    display: block;
+    margin: 0 20px;
+    width: 20%;
+    height: 5px;
+    background-color: #642f24;
+}

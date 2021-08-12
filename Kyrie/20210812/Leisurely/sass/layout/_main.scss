@@ -1,0 +1,164 @@
+.banner{
+    overflow: hidden;
+    background-color: #009bec;
+    position: relative;
+    background-image: url(/img/bg-icon.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+// 背景三個顏色照片
+.color{
+    position: absolute;
+}
+.yellow{
+    top: 0;
+    left: 50%;
+    transform: translateX(-1020px);
+}
+.pink{
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-1270px);
+}
+.green{
+    top: 0;
+    left: 50%;
+    transform: translateX(300px);
+}
+
+// 大盒子
+.banner_inner{
+    max-width: 1300px;
+    height: 1000px;
+    margin: 0 auto;
+    position: relative;
+    // border:1px solid black;
+}
+//小icon
+.boxman{
+    position: absolute;
+    top: 24%;
+    left: 0;
+    z-index: 10;
+}
+.panda{
+    position: absolute;
+    z-index: 10;
+    top: 41%;
+    right: 7%;
+    width: 7%;
+    // transform-origin: bottom center;
+}
+.tree{
+    position: absolute;
+    z-index: 10;
+    top: 5%;
+    right: 17%;
+    width: 6%;
+}
+
+// 主視覺
+.box{
+    position: absolute;
+    top: 23%;
+    left: 27%;
+    width: 60%;
+    z-index: 20;
+    // border: 1px solid black;
+}
+.box2{
+    z-index: 12;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.box3{
+    z-index: 15;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+// phone
+.phone{
+    position: absolute;
+    width: 54%;
+    top: -25%;
+    left: 41%;
+    z-index: 14;
+}
+// ps4
+.ps4{
+    position: absolute;
+    width: 59%;
+    top: -5%;
+    left: -4%;
+    z-index: 13;
+}
+// 上線慶
+.text1{
+    width: 21%;
+    position: absolute;
+    left: -9%;
+    top: -14%;
+}
+.text2{
+    width: 21%;
+    position: absolute;
+    top: -29%;
+    left: 10%;
+}
+.text3{
+    width: 25%;
+    position: absolute;
+    top: -22%;
+    left: 29%;
+    z-index: 16;
+}
+// 字上面的小企鵝
+.pingu{
+    position: absolute;
+    top: -27%;
+    left: 45%;
+    z-index: 17;
+}
+
+// 兩個黃色的卡片
+.banner_card{
+    position: absolute;
+    z-index: 30;
+    display: block;
+}
+.card1{
+    top: 53%;
+    left: 8%;
+    width: 44%;
+    cursor: default;
+}
+.card2{
+    width: 44%;
+    top: 59%;
+    left: 48%;
+}
+// 按鈕
+.banner_btn{
+    position: absolute;
+    z-index: 25;
+    bottom: 3%;
+    left:37%;
+    color: #fff;
+    font-size: 3rem;
+    font-weight: bold;
+    background-color: #22ac38;
+    border: 5px solid #fff;
+    border-radius: 100px;
+    padding: 5px 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    letter-spacing:1px;
+    img{
+        transition: 0.3s;
+        max-width: 25px;
+        margin-left: 10px;
+    }
+}

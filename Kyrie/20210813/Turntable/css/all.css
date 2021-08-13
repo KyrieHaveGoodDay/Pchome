@@ -619,12 +619,19 @@ img {
 .game .game_board {
   -webkit-transform: rotate(1058deg);
           transform: rotate(1058deg);
+  -webkit-transition: 3s;
+  transition: 3s;
 }
 
 .game .game_btn {
   position: absolute;
   top: 35%;
   left: 37%;
+}
+
+.board_go {
+  -webkit-transform: rotate(600deg) !important;
+          transform: rotate(600deg) !important;
 }
 
 .activity {

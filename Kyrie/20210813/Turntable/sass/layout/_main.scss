@@ -89,6 +89,9 @@
     }
     .game_board{
         transform:rotate(1058deg);
+        transition: 3s;
+        
+
     }
     .game_btn{
         position: absolute;
@@ -96,6 +99,10 @@
         left: 37%;
     }
     
+}
+// 轉動
+.board_go{
+    transform: rotate(600deg) !important;;
 }
 
 // 活動說明

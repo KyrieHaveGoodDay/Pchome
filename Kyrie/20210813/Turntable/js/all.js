@@ -56,3 +56,11 @@ $(function () {
 
 
 });
+
+
+$('.game_btn').click(function(e){
+  e.preventDefault();
+  console.log('123');
+  $('.game_board').addClass('board_go');
+})
+// $('.game_board').removeClass('board_go');

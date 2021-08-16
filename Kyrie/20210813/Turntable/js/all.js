@@ -89,7 +89,7 @@ function zero(num) {
 
   // alert('恭喜'+num)
   // 回到原點
-  $('.game_board').css('transform', 'rotate(1058deg)');
+  
   
   // 得獎提示完才能再次點擊
   
@@ -114,7 +114,7 @@ function ground() {
   // flase 運轉中不能點擊or連點
   check = false;
   // 將陣列亂數選出的num值帶入zero這個方法去做判斷
-  setTimeout('zero('+num+')', 4000);
+  setTimeout('zero('+num+')', 3000);
 }
 
 

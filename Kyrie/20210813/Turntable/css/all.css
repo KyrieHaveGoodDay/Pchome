@@ -626,15 +626,8 @@ img {
 .game .game_board {
   -webkit-transform: rotate(1058deg);
           transform: rotate(1058deg);
-  -webkit-transition: 3s;
-  transition: 3s;
-}
-
-.game .go_back {
-  -webkit-transform: rotate(1058deg);
-          transform: rotate(1058deg);
-  -webkit-transition: 0.5s !important;
-  transition: 0.5s !important;
+  -webkit-transition: 2s;
+  transition: 2s;
 }
 
 .game .game_btn {

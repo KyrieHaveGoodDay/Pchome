@@ -64,6 +64,8 @@ var check = true;
 // 隨機抽獎
 var range = [60, 100, 200, 240, 300];
 
+
+
 // 旋轉完判斷要顯示的頁面
 function zero(num) {
   // 這裡的num是根據range的範圍傳進來的值 用來判斷要顯示哪個獎項
@@ -88,6 +90,7 @@ function zero(num) {
   // alert('恭喜'+num)
   // 回到原點
   $('.game_board').css('transform', 'rotate(1058deg)');
+  
   // 得獎提示完才能再次點擊
   
   check = true;
@@ -110,6 +113,7 @@ function ground() {
   $('.game_board').css('transform', 'rotate(' + num + 'deg)');
   // flase 運轉中不能點擊or連點
   check = false;
+  // 將陣列亂數選出的num值帶入zero這個方法去做判斷
   setTimeout('zero('+num+')', 4000);
 }
 
@@ -128,5 +132,7 @@ $('.game_btn').click(function (e) {
   }
 
 
-})
+});
 // $('.game_board').removeClass('board_go');
+
+//gsap

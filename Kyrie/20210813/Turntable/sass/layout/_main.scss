@@ -97,6 +97,11 @@
         transform: rotate(1058deg);
         transition: 3s;
     }
+    //確認頁面結束後轉盤歸零的速度
+    .go_back{
+        transform: rotate(1058deg);
+        transition: 0.5s !important;
+    }
     .game_btn {
         position: absolute;
         top: 35%;

@@ -630,6 +630,13 @@ img {
   transition: 3s;
 }
 
+.game .go_back {
+  -webkit-transform: rotate(1058deg);
+          transform: rotate(1058deg);
+  -webkit-transition: 0.5s !important;
+  transition: 0.5s !important;
+}
+
 .game .game_btn {
   position: absolute;
   top: 35%;

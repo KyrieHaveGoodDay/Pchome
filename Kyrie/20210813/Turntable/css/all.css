@@ -525,7 +525,7 @@ img {
 }
 
 .banner::after {
-  content: '';
+  content: "";
   display: block;
   z-index: 3;
   bottom: 0;
@@ -612,8 +612,15 @@ img {
 
 .game .game_arrow {
   position: absolute;
-  left: 43%;
+  left: 44%;
   z-index: 16;
+}
+
+@media screen and (max-width: 480px) {
+  .game .game_arrow img {
+    width: 55px;
+    height: 80px;
+  }
 }
 
 .game .game_board {
@@ -627,6 +634,69 @@ img {
   position: absolute;
   top: 35%;
   left: 37%;
+}
+
+@media screen and (max-width: 450px) {
+  .game .game_btn {
+    top: 37%;
+    left: 39%;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .game .game_btn {
+    top: 38%;
+    left: 40%;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .game .game_btn {
+    top: 39%;
+    left: 40%;
+  }
+}
+
+@media screen and (max-width: 330px) {
+  .game .game_btn {
+    left: 41%;
+  }
+}
+
+@media screen and (max-width: 570px) {
+  .game .game_btn img {
+    width: 130px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .game .game_btn img {
+    width: 100px;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .game .game_btn img {
+    width: 90px;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .game .game_btn img {
+    width: 80px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .game .game_btn img {
+    width: 70px;
+  }
+}
+
+@media screen and (max-width: 330px) {
+  .game .game_btn img {
+    width: 60px;
+  }
 }
 
 .board_go {
@@ -670,8 +740,8 @@ img {
   background-image: -webkit-gradient(linear, left top, right top, color-stop(9%, #252323), color-stop(0, transparent)), -webkit-gradient(linear, left top, left bottom, color-stop(9%, #252323), color-stop(0, transparent));
   background-image: linear-gradient(90deg, #252323 9%, transparent 0), linear-gradient(#252323 9%, transparent 0);
   background-size: 15px 15px;
-  -webkit-box-shadow: 0 0 0 5px #e18f00 , 0 0 0 10px #ffe7ad;
-          box-shadow: 0 0 0 5px #e18f00 , 0 0 0 10px #ffe7ad;
+  -webkit-box-shadow: 0 0 0 5px #e18f00, 0 0 0 10px #ffe7ad;
+          box-shadow: 0 0 0 5px #e18f00, 0 0 0 10px #ffe7ad;
 }
 
 .content_main .content__main--title {

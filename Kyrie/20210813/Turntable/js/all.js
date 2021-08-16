@@ -62,24 +62,25 @@ $(function () {
 // true代表可以點擊
 var check = true;
 // 隨機抽獎
-var range = [60, 90, 180, 240, 270];
+var range = [60, 100, 200, 240, 300];
 
 
 function zero(num) {
+  // 這裡的num是根據range的範圍傳進來的值 用來判斷要顯示哪個獎項
   console.log(num);
   if(num==60){
     alert('恭喜獲得1點P幣')
   }
-  if(num==90){
+  if(num==100){
     alert('銘謝惠顧')
   }
-  if(num==180){
+  if(num==200){
     alert('恭喜獲得1點P幣')
   }
   if(num==240){
     alert('恭喜獲得12點P幣')
   }
-  if(num==270){
+  if(num==300){
     alert('恭喜獲得1點P幣')
   }
 

@@ -58,9 +58,43 @@ $(function () {
 });
 
 
+// 點擊過程中不能再次點擊
+// true代表可以點擊
+
+var check = true;
+
+function zero(){
+  alert('恭喜....')
+  $('.game_board').css('transform','rotate(1058deg)');
+  // 得獎提示完才能再次點擊
+  check = true; 
+}
+var i =0;
+// function
+function ground(){
+  i=i+600;
+  console.log(i);
+  $('.game_board').css('transform','rotate(600deg)');
+  // flase 運轉中不能點擊or連點
+  check = false;
+  setTimeout(zero,4000);
+}
+
+
 $('.game_btn').click(function(e){
   e.preventDefault();
-  console.log('123');
-  $('.game_board').addClass('board_go');
+  // console.log('123');
+  // $('.game_board').addClass('board_go');
+  // var a = 1;
+  // a=a+1;
+  // console.log(a);
+  if(check==true){
+    ground();
+    
+  }else{
+    console.log('現在不能點');
+  }
+  
+  
 })
 // $('.game_board').removeClass('board_go');

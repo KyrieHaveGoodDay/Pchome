@@ -64,7 +64,7 @@ var check = true;
 // 隨機抽獎
 var range = [60, 100, 200, 240, 300];
 
-
+// 旋轉完判斷要顯示的頁面
 function zero(num) {
   // 這裡的num是根據range的範圍傳進來的值 用來判斷要顯示哪個獎項
   console.log(num);
@@ -89,10 +89,11 @@ function zero(num) {
   // 回到原點
   $('.game_board').css('transform', 'rotate(1058deg)');
   // 得獎提示完才能再次點擊
+  
   check = true;
 }
-var i = 0;
-// function
+
+// 旋轉的方法
 function ground() {
 
   // i=i+600;

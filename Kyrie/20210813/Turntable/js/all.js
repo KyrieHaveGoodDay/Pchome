@@ -95,11 +95,10 @@ function ground() {
 
 $('.game_btn').click(function (e) {
   e.preventDefault();
-  // console.log('123');
-  // $('.game_board').addClass('board_go');
-  // var a = 1;
-  // a=a+1;
-  // console.log(a);
+  
+  // 判斷轉盤是否正在旋轉
+  // true等於沒有
+  // flase是正在旋轉
   if (check == true) {
     ground();
 

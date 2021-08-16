@@ -136,3 +136,6 @@ $('.game_btn').click(function (e) {
 // $('.game_board').removeClass('board_go');
 
 //gsap
+// gsap.to('.banner_title',{duration:2.5,ease:"bounce.out",y:500});
+gsap.from(
+  '.banner_title', { duration: 1.5, ease: "bounce.out", y: -270 });

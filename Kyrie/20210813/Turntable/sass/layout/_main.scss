@@ -181,6 +181,10 @@
     height: 100px;
     background-color: #efae13;
     box-shadow: 0 0 0 6px #efae13;
+    @media screen and (max-width: 946px) {
+        width: 98%;
+        
+    }
 }
 .content_main {
     border-radius: 15px;

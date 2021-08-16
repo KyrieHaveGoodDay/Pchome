@@ -65,8 +65,26 @@ var check = true;
 var range = [60, 90, 180, 240, 270];
 
 
-function zero() {
-  alert('恭喜....')
+function zero(num) {
+  console.log(num);
+  if(num==60){
+    alert('恭喜獲得1點P幣')
+  }
+  if(num==90){
+    alert('銘謝惠顧')
+  }
+  if(num==180){
+    alert('恭喜獲得1點P幣')
+  }
+  if(num==240){
+    alert('恭喜獲得12點P幣')
+  }
+  if(num==270){
+    alert('恭喜獲得1點P幣')
+  }
+
+
+  // alert('恭喜'+num)
   // 回到原點
   $('.game_board').css('transform', 'rotate(1058deg)');
   // 得獎提示完才能再次點擊
@@ -85,11 +103,12 @@ function ground() {
   }
   // console.log(range[ranFun()]);
   var num = range[ranFun()];
-  console.log(num);
+  // console.log(num);
+  // ' + num + '
   $('.game_board').css('transform', 'rotate(' + num + 'deg)');
   // flase 運轉中不能點擊or連點
   check = false;
-  setTimeout(zero, 4000);
+  setTimeout('zero('+num+')', 4000);
 }
 
 

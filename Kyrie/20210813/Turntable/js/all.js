@@ -60,41 +60,53 @@ $(function () {
 
 // 點擊過程中不能再次點擊
 // true代表可以點擊
-
 var check = true;
+// 隨機抽獎
+var range = [60, 90, 180, 240, 270];
 
-function zero(){
+
+function zero() {
   alert('恭喜....')
-  $('.game_board').css('transform','rotate(1058deg)');
+  // 回到原點
+  $('.game_board').css('transform', 'rotate(1058deg)');
   // 得獎提示完才能再次點擊
-  check = true; 
+  check = true;
 }
-var i =0;
+var i = 0;
 // function
-function ground(){
-  i=i+600;
-  console.log(i);
-  $('.game_board').css('transform','rotate(600deg)');
+function ground() {
+
+  // i=i+600;
+  // console.log(i);
+
+  //隨機取陣列的數字
+  function ranFun() {
+    return parseInt(Math.random() * 5);
+  }
+  // console.log(range[ranFun()]);
+  var num = range[ranFun()];
+  console.log(num);
+  $('.game_board').css('transform', 'rotate(' + num + 'deg)');
   // flase 運轉中不能點擊or連點
   check = false;
-  setTimeout(zero,4000);
+  setTimeout(zero, 4000);
 }
 
 
-$('.game_btn').click(function(e){
+$('.game_btn').click(function (e) {
   e.preventDefault();
   // console.log('123');
   // $('.game_board').addClass('board_go');
   // var a = 1;
   // a=a+1;
   // console.log(a);
-  if(check==true){
+  if (check == true) {
     ground();
-    
-  }else{
+
+  } else {
     console.log('現在不能點');
   }
-  
-  
+
+
 })
 // $('.game_board').removeClass('board_go');
